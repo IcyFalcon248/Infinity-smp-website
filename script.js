@@ -9,7 +9,6 @@ const servers = [
     { name: "Lifesteal", address: "157.90.141.190:32000", description: "Steal life from others in this hardcore server." },
     { name: "Skywars", address: "49.12.168.17:52302", description: "Battle on floating islands for survival." },
     { name: "PvP", address: "49.12.168.17:43357", description: "Engage in combat with other players." }
-    { name: "PvP2", address: "498.132.168.172:43357", description: "Engage in combat with others." }
 ];
 
 function checkServerStatus(serverAddress) {
@@ -55,10 +54,12 @@ function displayServers() {
         serverStatus.classList.add("status");
         serverStatus.textContent = "Checking...";
 
+        // Appending elements to serverDiv
         serverDiv.appendChild(serverName);
         serverDiv.appendChild(serverDesc);
         serverDiv.appendChild(serverStatus);
         
+        // Append serverDiv to the server list
         serverListDiv.appendChild(serverDiv);
 
         // Check the server's status
@@ -66,4 +67,5 @@ function displayServers() {
     });
 }
 
+// Display servers when the page loads
 displayServers();
