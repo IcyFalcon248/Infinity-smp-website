@@ -23,10 +23,12 @@ function checkServerStatus(serverAddress) {
                 serverDiv.classList.add("online");
                 serverDiv.classList.remove("offline");
                 serverDiv.querySelector(".status").textContent = "Online";
+                serverDiv.querySelector(".status").style.backgroundColor = "#81c784"; // Green for online
             } else {
                 serverDiv.classList.add("offline");
                 serverDiv.classList.remove("online");
                 serverDiv.querySelector(".status").textContent = "Offline";
+                serverDiv.querySelector(".status").style.backgroundColor = "#e57373"; // Red for offline
             }
         })
         .catch(() => {
@@ -34,6 +36,7 @@ function checkServerStatus(serverAddress) {
             serverDiv.classList.add("offline");
             serverDiv.classList.remove("online");
             serverDiv.querySelector(".status").textContent = "Offline";
+            serverDiv.querySelector(".status").style.backgroundColor = "#e57373"; // Red for offline
         });
 }
 
@@ -41,7 +44,7 @@ function displayServers() {
     const serverListDiv = document.getElementById("server-list");
     servers.forEach(server => {
         const serverDiv = document.createElement("div");
-        serverDiv.classList.add("server");
+        serverDiv.classList.add("game-mode");
         serverDiv.id = server.address;
         
         const serverName = document.createElement("h3");
